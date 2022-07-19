@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 02</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 1. 스프레드 연산자는 그냥 늘여 놓는 거다.
+        const animal = {
+            leg: 4,
+            type: 'cute',
+            mouse: 1,
+        }
+
+        const cat = {
+            ...animal,
+            sound: 'Meow',
+        }
+
+        const dog = {
+            ...animal,
+            type: 'cute',
+            sound: 'Wang',
+        }
+
+        const fox = {
+            leg: 4,
+            type: 'cute',
+            sound: 'Kkyang',
+        }
+
+        console.log(cat, dog, fox);
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 01</title>
+</head>
+
+<body>
+    <div>객체만들기</div>
+    <div id="App">객체만들기</div>
+
+    <script>
+        // 1. 객체 리터럴 표기법을 이용한 객체의 생성
+        const emma = {
+            name: 'Emma',
+            age: 27,
+        }
+
+        console.log(emma.name + `woods`);
+
+        // 2. 객체 생성자함수를 이용한 객체의 생성
+        const elma = new Object();
+        elma.name = 'Elma';
+        elma.age = 21;
+
+        console.log(elma);
+
+        // 3. 객체의 메소드 : 객체는 속성 (property)과 함수(method)를 가진다. property (key: value)
+
+        const ema = {
+            name: 'Ema',
+            하는일: function () {
+                console.log(ema.name + `Cooking`)
+            }
+        }
+
+        console.log(ema['name'], ema.name);
+        ema.하는일();
+
+        // 4. 객체에서의 this
+        // `${this.name} 와 함께 공부하기...` = this.name + '와 함께 공부하기...' 와 같은 말이다.
+        const gamma = {
+            name: 'Gamma',
+            age: 28,
+            하는일: function () {
+                console.log(`${this.name} 와 함께 공부하기...`)
+            }
+        }
+
+        gamma.하는일();
+
+        // 5. 객체의 메소드로 ()=> 화살표 함수를 쓰면 this는 ?
+
+        const beta = {
+            name: 'Beta',
+            age: 32,
+            하는일: () => {
+                console.log(`${beta.name} 과 함께 공부하기...`)
+            }
+        }
+
+        beta.하는일();
+
+        // 6. 객체 안의 일반적인 함수(무명)에서의 this 바인딩...
+
+        const choi = {
+            name: 'Bohui',
+            job: function () {
+                setInterval(() => {
+                    console.log(this.name + 'Baking')
+                }, 1000) // setInterval 1000은 1초마다 실행하라는 명령
+            }
+        }
+
+        choi.job();
+
+
+
+        // etc. 이벤트리스너에서의 this
+        // id는 바로 선택이 가능하지만 권장하는 방법이 아니다.
+        // App, document.querySelector('#App'), document.getElementById('App')
+
+        App.addEventListner('click', function () {
+            console.log(this) // 이벤트리스너 function에서의 this는 App
+        });
+
+        This.addEventListner('click', () => {
+            console.log(this) // 화살표함수에서의 this는 App을 가리킨다. ex)포지션에서 부모가 없는 상황이라고 생각하면 됨.
+        });
+
+        console.log(this, name) // this는 원래 window를 가리키는데, function과 같은 함수안에 들어오면 this는 App을 가리킨다.
+
+
+    </script>
+</body>
+
+</html>
