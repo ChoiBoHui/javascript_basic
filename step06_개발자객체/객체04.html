@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 04 - 객체생성자함수</title>
+</head>
+
+<body>
+    <script>
+        // 1. 객체를 찍어내는 기계를 만드는 옛날(고전) 방법. class로 바뀜.
+        // 생성자를 만들때는 앞에 대문자를 쓰는게 룰 이다.
+        function Emma(name) {
+            this.name = name;
+            this.showName = function () {
+                console.log(this.name)
+            };
+        };
+
+        // 인스턴스란 무엇인가???
+
+        const 엠마 = new Emma('엠마');
+        엠마.showName();
+
+        const 켄마 = new Emma('켄마');
+        켄마.showName();
+
+        Emma.prototype.group = '그룹이름이마마';
+
+        console.log(켄마.group);
+        console.log(엠마.group);
+
+
+    </script>
+</body>
+
+</html>
