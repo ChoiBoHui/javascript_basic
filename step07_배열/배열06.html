@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 06</title>
+</head>
+
+<body>
+    <ul id="UL"></ul>
+
+    <!-- script Start -->
+    <script>
+        const DATA = [
+            { id: 1, content: "메로나", date: "2022년 7월 21일" },
+            { id: 2, content: "누가바", date: "2022년 7월 31일" },
+            { id: 3, content: "바밤바", date: "2022년 7월 14일" },
+            { id: 4, content: "죠스바", date: "2022년 7월 22일" },
+            { id: 5, content: "비비빅", date: "2022년 7월 27일" },
+        ]
+
+        const RESULT = DATA.filter(el => el.id !== 3); // 부등호중에 같은 것! 은 == 는을 두개 써야한다!
+        // !==는 그걸 제외하고 전부!
+        const NEWLIST = RESULT.map(data => `<li>${data.content}<small>${data.date}</small><button>삭제</button></li>`).join('')
+        console.log(NEWLIST);
+
+        UL.innerHTML = NEWLIST;
+
+        const BTN = document.querySelectorAll('button');
+        console.log(BTN);
+        BTN.forEach((button, idx) => {
+            button.addEventListener('click', () => { console.log(idx) })
+        })
+
+
+    </script>
+    <!-- script End -->
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 05</title>
+</head>
+
+<body>
+    <ul id="UL"></ul>
+
+    <!-- script Start -->
+    <script>
+        const DATA = [
+            { id: 1, content: "메로나", data: "2022년 7월 21일" },
+            { id: 2, content: "누가바", data: "2022년 7월 21일" },
+            { id: 3, content: "바밤바", data: "2022년 7월 21일" },
+            { id: 4, content: "죠스바", data: "2022년 7월 21일" },
+            { id: 5, content: "비비빅", data: "2022년 7월 21일" },
+        ]
+
+        // const A = DATA.map((data) => { return '<li>' + data.content + '</li>' }); 아래와 같음
+        // const A = DATA.map(data => `<li>${data.content}</li>`);
+        const RESULT = DATA.map(data => `<li>${data.content}</li>`);
+        console.log(RESULT);
+        document.querySelector('#ul').innerHTML = RESULT;
+
+
+    </script>
+    <!-- script End -->
+</body>
+
+</html>
