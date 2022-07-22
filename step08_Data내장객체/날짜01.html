@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 01</title>
+</head>
+
+<body>
+    <div class="date"></div>
+    <script>
+        const 날짜 = new Date();
+        const 요일 = ['일', '월', '화', '수', '목', '금', '토']
+
+        const DATE = document.querySelector('.date');
+        DATE.innerHTML += 날짜.toLocaleString() + '<br/>'; // 게시판 글 썼을때 붙는 날짜
+        DATE.innerHTML += 날짜.toLocaleDateString() + '<br/>';
+        DATE.innerHTML += 날짜.getFullYear() + '년 <br/>';
+        DATE.innerHTML += 날짜.getMonth() + 1 + '월 <br/>';
+        DATE.innerHTML += 날짜.getDate() + '일 <br/>';
+        DATE.innerHTML += 요일[날짜.getDay()] + '요일 <br/>';
+
+        console.log(날짜)
+    </script>
+</body>
+
+</html>
